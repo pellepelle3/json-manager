@@ -72,7 +72,7 @@ function JSONMGR(options){
     if (!Util.isObject(json)) throw new TypeError('not an object')
 
     _json = json
-    return (autoSave) ? self.save() : Promise.resolve(_json)
+    return (_autoSave) ? self.save() : Promise.resolve(_json)
   }
 
   function saveFile(dir,target) {
