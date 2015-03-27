@@ -1,0 +1,33 @@
+{
+  "name": "json-manager",
+  "version": "1.0.0",
+  "description": "Json manager read update set get from file",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pellepelle3/json-manager.git"
+  },
+  "keywords": [
+    "json",
+    "manager",
+    "jsontofile",
+    "file",
+    "save"
+  ],
+  "author": "Antonio \"pelle\" Pellegrino",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pellepelle3/json-manager/issues"
+  },
+  "homepage": "https://github.com/pellepelle3/json-manager",
+  "dependencies": {
+    "deepbody": "0.0.3",
+    "mkdirp": "^0.5.0",
+    "promise": "^6.1.0",
+    "rimraf": "^2.3.2",
+    "then-fs": "^1.0.8"
+  }
+}
