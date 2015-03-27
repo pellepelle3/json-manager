@@ -1,15 +1,22 @@
 JSON Manager
 ===
 
+Install
+---
+
+```
+	npm i -S json-manager
+```
+
 Options
 ---
 
 Defaults
 ```json
-	{ dir:""
-	, target:""
-	, watch:false
-	, autoSave:true
+	{ "dir":""
+	, "target":""
+	, "watch":false
+	, "autoSave":true
 	}
 
 ```
@@ -18,7 +25,7 @@ Example
 ---
 ```javascript
 
-	var JSONMGR = require('./')
+	var JSONMGR = require('json-manager')
 	var json = new JSONMGR({dir:"./",target:"package.json",watch:true})
 
 	json.init().then(console.log.bind(console))
