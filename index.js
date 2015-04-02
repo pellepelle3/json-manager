@@ -27,10 +27,8 @@ function JSONMGR(options){
 
   events.EventEmitter.call(this)
   
-  this.init = function(){
-    if(_watching) 
-      self.startWatch()  
-    return self.read()
+  this.init = function(){ 
+    return self.read(true)
   }
 
   this.toJSON = function(){
@@ -41,15 +39,21 @@ function JSONMGR(options){
     return JSON.stringify(_json, null, 2)
   }
 
-  this.read = function() {
+  this.read = function(watch) {
     return fs.readFile(Path.join(_dir, _target))
       .then(JSON.parse, function(e) {
         if (e.code !== 'ENOENT') throw e
-        self.update({}) 
+        self.update({})
+          .then(function(){ 
+            if(watch && _watching) 
+              self.startWatch() 
+          })
         return {}
       })
       .then(function (obj) {
         _json = obj
+        if(watch && _watching) 
+            self.startWatch() 
         return Promise.resolve(_json)
       })
   }
